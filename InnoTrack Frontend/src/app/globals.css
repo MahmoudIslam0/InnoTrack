@@ -1,0 +1,280 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  /* Light Mode - Crisp, Academic, High Contrast */
+  --background: oklch(0.99 0 0); /* #fcfcfc */
+  --foreground: oklch(0.14 0 0); /* #0a0a0a */
+  --card: oklch(1 0 0); /* #ffffff */
+  --card-foreground: oklch(0.14 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.14 0 0);
+  
+  /* Primary Academic Blue */
+  --primary: oklch(0.55 0.15 250); /* Standard clear blue */
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.96 0.01 260); /* Slate 50 */
+  --secondary-foreground: oklch(0.2 0.02 260); /* Slate 800 */
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.55 0.02 260); /* Slate 500 */
+  --accent: oklch(0.96 0.01 260);
+  --accent-foreground: oklch(0.2 0.02 260);
+  --destructive: oklch(0.58 0.2 25); /* Rich Red */
+  --border: oklch(0.92 0.01 260); /* Slate 200 */
+  --input: oklch(0.92 0.01 260);
+  --ring: oklch(0.55 0.15 250); /* Match Primary */
+  
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  
+  /* Sharper standard radius */
+  /* Smoother premium standard radius */
+  --radius: 0.75rem; 
+  
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.14 0 0);
+  --sidebar-primary: oklch(0.55 0.15 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.01 260);
+  --sidebar-accent-foreground: oklch(0.2 0.02 260);
+  --sidebar-border: oklch(0.92 0.01 260);
+  --sidebar-ring: oklch(0.55 0.15 250);
+  
+  --scrollbar-thumb: oklch(0.82 0.01 260);
+  --scrollbar-thumb-hover: oklch(0.65 0.02 260);
+}
+
+.dark {
+  /* Dark Mode - Deep Slate, No Muddy Grays */
+  --background: oklch(0.14 0.01 260); /* Slate 950 */
+  --foreground: oklch(0.98 0 0); /* Very light slate */
+  --card: oklch(0.18 0.02 260); /* Slate 900 */
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.18 0.02 260);
+  --popover-foreground: oklch(0.98 0 0);
+  
+  /* Lighter Academic Blue for contrast */
+  --primary: oklch(0.6 0.15 260); 
+  --primary-foreground: oklch(0.14 0.01 260);
+  
+  --secondary: oklch(0.23 0.03 260); /* Slate 800 */
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.23 0.03 260);
+  --muted-foreground: oklch(0.7 0.02 260); /* Slate 400 */
+  --accent: oklch(0.23 0.03 260);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.2 25);
+  --border: oklch(0.23 0.03 260); /* Slate 800 */
+  --input: oklch(0.23 0.03 260);
+  --ring: oklch(0.6 0.15 260); /* Match Primary */
+  
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  
+  --sidebar: oklch(0.14 0.01 260);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.6 0.15 260);
+  --sidebar-primary-foreground: oklch(0.14 0.01 260);
+  --sidebar-accent: oklch(0.23 0.03 260);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.23 0.03 260);
+  --sidebar-ring: oklch(0.6 0.15 260);
+  
+  --scrollbar-thumb: oklch(0.35 0.03 260);
+  --scrollbar-thumb-hover: oklch(0.5 0.02 260);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em; /* Tighter tracking globally */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-semibold; /* Professional headers */
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .dashboard-page {
+    @apply p-4 md:p-8 max-w-7xl mx-auto pb-24 md:pb-8;
+  }
+
+  .dashboard-surface {
+    @apply bg-card text-card-foreground rounded-2xl border border-border shadow-sm;
+  }
+
+  .dashboard-card {
+    @apply bg-card text-card-foreground rounded-2xl p-6 border border-border shadow-sm transition-all duration-200;
+  }
+
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border;
+  }
+
+  /* ── Hide scrollbar on overflow containers ── */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── Mobile bottom nav spacing ── */
+  .mobile-safe-bottom {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  /* ── Smooth tab content transitions ── */
+  [role="tabpanel"] {
+    animation: tab-fade-in 0.2s ease-out;
+  }
+
+  @keyframes tab-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ── Better touch targets on mobile ── */
+  @media (max-width: 768px) {
+    .dashboard-page {
+      @apply px-4 pt-6;
+    }
+
+    button,
+    [role="button"] {
+      min-height: 44px;
+    }
+  }
+
+  /* ── Responsive card grids ── */
+  .card-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+  }
+
+  /* ── Smooth page transitions ── */
+  main {
+    animation: page-in 0.25s ease-out;
+  }
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ==========================================
+   GLOBAL PREMIUM SCROLLBAR SYSTEM
+   ========================================== */
+
+/* Target all scrollbars globally (Chrome, Safari, Edge, Opera, and other WebKit/Blink browsers) */
+*::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb) !important;
+  border: 2.5px solid var(--background) !important;
+  border-radius: 9999px !important;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover) !important;
+}
+
+/* Global scrollbar rules for Firefox */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--scrollbar-thumb) transparent !important;
+}
+
+/* Disable native Edge password reveal icon */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}

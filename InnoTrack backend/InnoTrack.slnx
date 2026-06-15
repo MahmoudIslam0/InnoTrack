@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".env.docker" />
+    <File Path=".env.example" />
+    <File Path="docker-compose.yml" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="InnoTrack.API/InnoTrack.API.csproj" />
+  <Project Path="InnoTrack.Application/InnoTrack.Application.csproj" />
+  <Project Path="InnoTrack.Domain/InnoTrack.Domain.csproj" />
+  <Project Path="InnoTrack.Infrastructure/InnoTrack.Infrastructure.csproj" />
+  <Project Path="InnoTrack.Tests/InnoTrack.Tests.csproj" Id="703437d5-82aa-4015-8448-91416ad69e80" />
+</Solution>
